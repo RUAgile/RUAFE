@@ -35,23 +35,60 @@
 <main>
     <div class="container">
         <div class="row">
+            <button class="col offset-m10 m2 waves-effect waves-light cyan btn">下载</button>
+        </div>
+        <div class="row">
             <div class="col m12 valign-wrapper resource opacity z-depth-2">
+                <i class="material-icons check">label</i>
                 <span>第一次作业:xxx</span>
-                <i class="material-icons right">import_export</i>
-                <i class="material-icons right">visibility</i>
+            </div>
+            <div class="col m12 opacity resContent z-depth-1">
+                <p>this is a notification</p>
+                <p><i class="material-icons check">label</i><span>this is a file.</span></p>
             </div>
             <div class="col m12 valign-wrapper resource opacity z-depth-2">
+                <i class="material-icons check">label</i>
                 <span>第一次作业:xxx</span>
-                <i class="material-icons">import_export</i>
+            </div>
+            <div class="col m12 opacity resContent z-depth-1">
+                <p>this is a notification</p>
+                <p><i class="material-icons check">label</i><span>this is a file.</span></p>
             </div>
             <div class="col m12 valign-wrapper resource opacity z-depth-2">
+                <i class="material-icons check">label</i>
                 <span>第一次作业:xxx</span>
-                <i class="material-icons">import_export</i>
+            </div>
+            <div class="col m12 opacity resContent z-depth-1">
+                <p>this is a notification</p>
+                <p><i class="material-icons check">label</i><span>this is a file.</span></p>
             </div>
         </div>
     </div>
 </main>
+
 <script>
+    $('.resource').click(function () {
+        var _this=this;
+//        $(_this).find('.resContent').toggle('normal');
+        if($(_this).css('margin-bottom')=='0px'){
+            $(_this).next().slideUp('normal');
+            $(_this).css('margin-bottom','8px');
+        }else{
+            $(_this).css('margin-bottom','0px');
+            $(_this).next().slideDown('normal');
+        }
+
+
+    })
+
+    $('.check').click(function () {
+        var _this=this;
+        if($(_this).html()=='label_outline'){
+            $(_this).html('label')
+        }else{
+            $(_this).html('label_outline')
+        }
+    })
 
 </script>
 </body>
