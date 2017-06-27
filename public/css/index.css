@@ -55,6 +55,7 @@ main {
 
 .deletesrc,.downloasrc,.publishsrc{
     float: right;
+    margin-left: 5px;
 
 }
 

@@ -30,5 +30,28 @@ $(function () {
                 $('.right-content').html(content);
         }
     });
+    
+    //course-teacher
     $('.collapsible').collapsible();
+    
+    $('.choosesrc').click(function () {
+        $("[name='checkbox']").each(function(){
+            if(!$(this).attr("checked")){
+                $(this).prop("checked",'true');
+            }
+        })
+    });
+    $('.choosenot').click(function () {
+
+            $("[name='checkbox']").each(function(){//反选
+                $(this).prop('checked',function (index,attr) {
+                    return !attr;
+                })
+            })
+    });
+
+    $('.modal').modal();
+
+    
+    
 })
