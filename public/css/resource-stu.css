@@ -1,0 +1,20 @@
+.resource{
+    display: block;
+    margin-bottom:8px;
+    height: 7vh;
+    color: #fff;
+    font-size:3vh;
+}
+.resource:
+/*TODO:未完成*/
+.resource:nth-child(odd){
+    background-color: #00bcd4 !important;
+}
+.resource:nth-child(even){
+    background-color: #80deea !important;
+}
+.resource i{
+    /*float: right;*/
+    display: inline-block;
+    float: right;
+}
