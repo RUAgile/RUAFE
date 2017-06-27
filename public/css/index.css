@@ -38,9 +38,32 @@ main {
 .edit-dagang{
     /*display: inline-block;*/
     display: none;
+    position: relative;
+    top:-30px;
 }
 .show-dagang{
     display: inline-block;
     /*display: none;*/
+}
+
+
+.toolbox{
+    padding-top: 10px;
+    padding-left:5px;
+    padding-right: 5px;
+}
+
+.deletesrc,.downloasrc,.publishsrc{
+    float: right;
+
+}
+
+.selectDown form p{
+    margin-top:0;
+    height:46px;
+}
+
+.selectDown form p label{
+    margin-top: 12px;
 }
 

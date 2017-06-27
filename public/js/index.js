@@ -14,5 +14,21 @@ $(function () {
         $('.show-dagang').css('display','none');
         $(_this).css('display','none');
 
-    })
+    });
+    $('.edit-cancel').click(function () {
+        $('.edit-dagang').css('display','none');
+        $('.show-dagang').css('display','block');
+        $('#dagang-btn').css('display','inline-block');
+    });
+    $('.side-bar ').click(function () {
+        var _this=this;
+        var id=_this.id;
+
+        switch (id){
+            case 'courses':
+                var content=$.get('course-teacher.html');
+                $('.right-content').html(content);
+        }
+    });
+    $('.collapsible').collapsible();
 })
