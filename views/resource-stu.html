@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>课程资源</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../public/css/materialize.css" media="screen,projection">
     <link type="text/css" rel="stylesheet" href="../public/css/materialize-custom.css" media="screen,projection">
@@ -35,29 +35,29 @@
 <main>
     <div class="container">
         <div class="row">
-            <button class="col offset-m10 m2 waves-effect waves-light cyan btn">下载</button>
+            <button class="col offset-m10 m2 waves-effect waves-light cyan btn" id="download">下载</button>
         </div>
         <div class="row">
             <div class="col m12 valign-wrapper resource opacity z-depth-2">
                 <i class="material-icons check">label</i>
                 <span>第一次作业:xxx</span>
             </div>
+        </div>
+        <div class="row">
+
             <div class="col m12 opacity resContent z-depth-1">
                 <p>this is a notification</p>
                 <p><i class="material-icons check">label</i><span>this is a file.</span></p>
             </div>
+        </div>
+        <div class="row">
             <div class="col m12 valign-wrapper resource opacity z-depth-2">
                 <i class="material-icons check">label</i>
                 <span>第一次作业:xxx</span>
             </div>
-            <div class="col m12 opacity resContent z-depth-1">
-                <p>this is a notification</p>
-                <p><i class="material-icons check">label</i><span>this is a file.</span></p>
-            </div>
-            <div class="col m12 valign-wrapper resource opacity z-depth-2">
-                <i class="material-icons check">label</i>
-                <span>第一次作业:xxx</span>
-            </div>
+        </div>
+        <div class="row">
+
             <div class="col m12 opacity resContent z-depth-1">
                 <p>this is a notification</p>
                 <p><i class="material-icons check">label</i><span>this is a file.</span></p>
@@ -69,13 +69,16 @@
 <script>
     $('.resource').click(function () {
         var _this=this;
-//        $(_this).find('.resContent').toggle('normal');
-        if($(_this).css('margin-bottom')=='0px'){
-            $(_this).next().slideUp('normal');
-            $(_this).css('margin-bottom','8px');
-        }else{
+
+        if($(_this).css('margin-bottom')=='8px') {
+            $(_this).closest('.row').next().find('.resContent').slideDown('normal');
             $(_this).css('margin-bottom','0px');
-            $(_this).next().slideDown('normal');
+        }else{
+            $(_this).closest('.row').next().find('.resContent').slideUp('normal');
+            setTimeout(function(){
+                $(_this).css('margin-bottom','8px');
+            },300);
+
         }
 
 
