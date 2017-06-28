@@ -74,7 +74,22 @@ $(function () {
             $('.show-src').append(headerhtml+header+middlehtml+content+footerhtml);
 
         } else{
-            alert('请完整输入标题和文本说明');
+            Materialize.toast('请输入完整的标题和说明文字', 4000);
+        }
+    });
+
+    $('.hw-public').on('click',function () {
+        var header=$('#hwheadline').val();
+        var content=$('#hwcontent').val();
+        if(header&&content){
+            var headerhtml='<li> <div class="collapsible-header"> <div class="col s1 m1 selectDown"> <form> <p> <input type="checkbox" name="checkbox" class="filled-in" id="src1"> <label for="src1"></label> </p> </form> </div> <i class="material-icons">filter_drama</i>';
+            var middlehtml='<i class="material-icons text-black right">play_for_work</i> </div> <div class="collapsible-body"> <span>';
+            var footerhtml='</span> </div> </li>';
+
+            $('.show-tw').append(headerhtml+header+middlehtml+content+footerhtml);
+
+        } else{
+            Materialize.toast('请输入完整的标题和说明文字', 4000);
         }
     });
 
@@ -85,10 +100,17 @@ $(function () {
 
     $('.app-pass').click(function () {
         var _this=this;
+        var newbutton='<a class="waves-effect waves-light btn tm-edit">调整团队</a> <a class="waves-effect waves-light btn red tm-del">解散团队</a>';
+
         var li=$(_this).parent().parent();
+        var div=$(_this).parent();
+        $(div).append(newbutton);
+
         $('.show-tm').append(li);
         $(_this).next().remove();
         $(_this).remove();
+
+
 
     });
 
@@ -97,6 +119,22 @@ $(function () {
         var li=$(_this).parent().parent();
         $(li).css('display','none');
     });
+    
+    $('.tm-del').on('click',function () {
+        var _this=this;
+        var li=$(_this).parent().parent();
+        $(li).css('display','none');
+    });
+    $('.collapsible-body').on('click','.tm-del',function () {
+        var _this=this;
+        var li=$(_this).parent().parent();
+        $(li).css('display','none');
+    });
+    
+    $('.tm-edit').click(function () {
+
+    });
+
 
 
     
