@@ -17,12 +17,13 @@ $('.teamlist').click(function () {
         },300);
     }
 });
-function revealTeamMng() {
+function revealTeamMng() {//TODO:有bug
+    alert(1);
     $('#create-team').modal('close');
     $('#team-choose').css('display','none');
     $('#team-manage').css('display','block');
 }
-function  revealTeamCheck() {
+function revealTeamCheck() {
     $('#find-team').modal('close');
     $('#team-choose').css('display','none');
     $('#team-check').css('display','block');
