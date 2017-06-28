@@ -1,3 +1,21 @@
 .color-red {
     color: red;
 }
+.teamlist{
+    background-color: #00bcd4 !important;
+    margin-bottom: 8px;
+    font-size: 16px;
+    padding-right: 0px;
+    padding-left: 0px;
+    color: #fff !important;
+}
+.teamContent{
+    background-color: #fff !important;
+    display: none;
+    margin-bottom: 8px;
+    padding-top: 8px !important;
+    padding-bottom:8px !important;
+}
+.row{
+    margin-bottom: 0px;
+}

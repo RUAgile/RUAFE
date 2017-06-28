@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <title>团队管理</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="../public/css/materialize.css" media="screen,projection">
-    <link type="text/css" rel="stylesheet" href="../public/css/materialize-custom.css" media="screen,projection">
-    <link type="text/css" rel="stylesheet" href="../public/css/team-stu.css" media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="css/materialize-custom.css" media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="css/team-stu.css" media="screen,projection">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="../public/js/materialize.min.js"></script>
 </head>
 <body>
 <header>
@@ -37,37 +35,105 @@
         <div class="row">
             <div class="card col offset-m1 m5">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="../public/img/team-leader.JPG">
+                    <img class="activator" src="img/team-leader.JPG">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">我要当组长！<i class="material-icons right">more_vert</i> </span>
                 </div>
                 <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">我要当组长！<i class="material-icons right">close</i></span>
-                <p>请确认是否要成为<strong class="color-red">团队负责人</strong>,本次选择之后将不可更改,如果选择错误请联系老师进行更改</p>
-                <button class="waves-effect waves-light cyan btn" href="#comfirm-leader">确认</button>
-            </div>
+                    <span class="card-title grey-text text-darken-4">我要当组长！<i class="material-icons right">close</i></span>
+                    <p>请确认是否要成为<strong class="color-red">团队负责人</strong>,本次选择之后将不可更改,如果选择错误请联系老师进行更改</p>
+                    <a class="waves-effect waves-light cyan btn" href="#create-team">确认</a>
+                </div>
             </div>
             <div class="card col offset-m1 m5">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="../public/img/team-member.JPG">
+                    <img class="activator" src="img/team-member.JPG">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">我要当组员<i class="material-icons right">more_vert</i> </span>
                 </div>
                 <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">我要当组员<i class="material-icons right">close</i></span>
+                    <span class="card-title grey-text text-darken-4">我要当组员<i
+                            class="material-icons right">close</i></span>
                     <p>请确认是否要成为<strong class="color-red">团队组员</strong>,本次选择之后将不可更改,如果选择错误请联系老师进行更改</p>
-                    <button class="waves-effect waves-light cyan btn">确认</button>
+                    <a class="waves-effect waves-light cyan btn" href="#find-team">确认</a>
                 </div>
             </div>
         </div>
-        <div id="comfirm-leader" class="modal modal-fixed-footer">
-            <form class="modal-content">
-                <input placeholder=""
-            </form>
-        </div>
     </div>
 </main>
+<!--modal-->
+<div id="create-team" class="modal">
+    <form class="modal-content">
+        <div class="input-field">
+            <input placeholder="请输入团队名称" type="text" class="validate" id="teamname">
+            <label for="teamname">团队名称</label>
+        </div>
+        <div class="input-field">
+            <textarea placeholder="请输入团队信息" type="text" class="materialize-textarea" id="teaminfo"></textarea>
+            <label for="teaminfo">团队信息</label>
+        </div>
+        <button type="submit" class="cyan waves-effect waves-light btn">确认</button>
+    </form>
+</div>
+<div id="find-team" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col m12 valign-wrapper teamlist opacity z-depth-2">
+                <span>RUA-于济凡的团队</span><!--队名-组长姓名-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m12 opacity teamContent z-depth-1">
+                <h4>团队信息</h4>
+                <p>blahblah</p>
+                <h4>队员信息</h4>
+                <ul class="collection">
+                    <li class="collection-item">吴举豪</li>
+                    <li class="collection-item">冯凯文</li>
+                </ul>
+                <button type="submit" class="cyan waves-effect waves-light btn">申请加入</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m12 valign-wrapper teamlist opacity z-depth-2">
+                <span>RUA-于济凡的团队</span><!--队名-组长姓名-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m12 opacity teamContent z-depth-1">
+                <h4>团队信息</h4>
+                <p>blahblah</p>
+                <h4>队员信息</h4>
+                <ul class="collection">
+                    <li class="collection-item">吴举豪</li>
+                    <li class="collection-item">冯凯文</li>
+                </ul>
+                <button type="submit" class="cyan waves-effect waves-light btn">申请加入</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m12 valign-wrapper teamlist opacity z-depth-2">
+                <span>RUA-于济凡的团队</span><!--队名-组长姓名-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m12 opacity teamContent z-depth-1">
+                <h4>团队信息</h4>
+                <p>blahblah</p>
+                <h4>队员信息</h4>
+                <ul class="collection">
+                    <li class="collection-item">吴举豪</li>
+                    <li class="collection-item">冯凯文</li>
+                </ul>
+                <button type="submit" class="cyan waves-effect waves-light btn">申请加入</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/team-stu.js"></script>
 </body>
 </html>
