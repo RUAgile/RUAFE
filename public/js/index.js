@@ -20,6 +20,14 @@ $(function () {
         $('.show-dagang').css('display','block');
         $('#dagang-btn').css('display','inline-block');
     });
+    $('.edit-submit').click(function () {
+        var dagang=$('.input-dagang').val();
+        $('.show-dagang').text('教学大纲: '+dagang);
+        $('.edit-dagang').css('display','none');
+        $('.show-dagang').css('display','block');
+        $('#dagang-btn').css('display','inline-block');
+
+    })
     $('.side-bar ').click(function () {
         var _this=this;
         var id=_this.id;
