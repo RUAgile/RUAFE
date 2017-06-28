@@ -27,7 +27,7 @@ $(function () {
         $('.show-dagang').css('display','block');
         $('#dagang-btn').css('display','inline-block');
 
-    })
+    });
     $('.side-bar ').click(function () {
         var _this=this;
         var id=_this.id;
@@ -59,6 +59,24 @@ $(function () {
     });
 
     $('.modal').modal();
+
+
+    //tc-tm.html
+
+    $('.app-pass').click(function () {
+        var _this=this;
+        var li=$(_this).parent().parent();
+        $('.show-tm').append(li);
+        $(_this).prev().remove();
+        $(_this).remove();
+
+    });
+
+    $('.app-reject').click(function () {
+        var _this=this;
+        var li=$(_this).parent().parent();
+        $(li).css('display','none');
+    })
 
     
     
