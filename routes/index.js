@@ -10,9 +10,11 @@ router.get('/index.html',function (req,res,next) {
     res.render('index',{title:'SEPS'});
 
 });
-router.get('/src-teacher.html',function (req,res,next) {
-    res.render('src-teacher',{title:'SEPS'})
+router.get('/tc-src.html',function (req,res,next) {
+    res.render('tc-src',{title:'SEPS'})
 })
-
+router.get('/tc-hw.html',function (req,res,next) {
+    res.render('tc-hw',{title:'SEPS'})
+})
 
 module.exports = router;

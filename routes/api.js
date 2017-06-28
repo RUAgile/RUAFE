@@ -7,7 +7,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/course', function(req, res, next) {
-    res.sendFile(__dirname+'course-teacher.html');
+    res.sendFile(__dirname+'tc-cs.html');
 });
 
 module.exports = router;

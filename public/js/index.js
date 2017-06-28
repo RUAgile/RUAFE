@@ -26,7 +26,7 @@ $(function () {
 
         switch (id){
             case 'courses':
-                var content=$.get('course-teacher.html');
+                var content=$.get('tc-cs.html');
                 $('.right-content').html(content);
         }
     });
