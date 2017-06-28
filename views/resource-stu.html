@@ -7,12 +7,34 @@
     <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection">
     <link type="text/css" rel="stylesheet" href="css/materialize-custom.css" media="screen,projection">
     <link type="text/css" rel="stylesheet" href="css/resource-stu.css" media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="css/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
 </head>
 <body>
+<div class="header navbar-fixed">
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">login</a></li>
+        <li><a href="#!">settings</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">logout</a></li>
+    </ul>
+
+    <nav>
+        <div class="nav-wrapper cyan fixed">
+            <a href="#!" class="brand-logo">SEPS</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#id1">Sass</a></li>
+                <li><a href="#id2">Components</a></li>
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">login<i
+                        class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
 <header>
     <ul id="nav-mobile" class="side-nav fixed">
         <li class="bold side-bar">
