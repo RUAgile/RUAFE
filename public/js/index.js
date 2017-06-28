@@ -119,6 +119,12 @@ $(function () {
         var div = $(_this).parent();
         $(div).append(newbutton);
 
+        var divbro=$(div).prev();
+        var divspan=$(divbro).children('span');
+
+        $(divspan).remove();
+        $(divbro).append('<span class="badge cyan new" data-badge-caption="已审核"></span>');
+
         $('.show-tm').append(li);
         $(_this).next().remove();
         $(_this).remove();
@@ -146,6 +152,8 @@ $(function () {
     $('.tm-edit').click(function () {
         //TODO
     });
+
+
 
 
 })
