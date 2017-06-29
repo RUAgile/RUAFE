@@ -69,11 +69,15 @@ $(function () {
         });
     });
 
+    $('.downloasrc').on('click',function () {
+        Materialize.toast('服务器没有相关资源', 4000);
+    })
+
     $('.src-public').click(function () {
         var header = $('#srcheadline').val();
         var content = $('#srccontent').val();
         if (header && content) {
-            var headerhtml = '<li> <div class="collapsible-header"> <div class="col s1 m1 selectDown"> <form> <p> <input type="checkbox" name="checkbox" class="filled-in" id="src1"> <label for="src1"></label> </p> </form> </div> <i class="material-icons">filter_drama</i>';
+            var headerhtml = '<li> <div class="collapsible-header"> <div class="col s1 m1 selectDown"> <form> <p> <input type="checkbox" name="checkbox" class="filled-in" id="src4"> <label for="src4"></label> </p> </form> </div> <i class="material-icons">filter_drama</i>';
             var middlehtml = '<i class="material-icons text-black right">play_for_work</i> </div> <div class="collapsible-body"> <span>';
             var footerhtml = '</span> </div> </li>';
 
@@ -95,7 +99,7 @@ $(function () {
         var header = $('#hwheadline').val();
         var content = $('#hwcontent').val();
         if (header && content) {
-            var headerhtml = '<li> <div class="collapsible-header"> <div class="col s1 m1 selectDown"> <form> <p> <input type="checkbox" name="checkbox" class="filled-in" id="src1"> <label for="src1"></label> </p> </form> </div> <i class="material-icons">filter_drama</i>';
+            var headerhtml = '<li> <div class="collapsible-header"> <div class="col s1 m1 selectDown"> <form> <p> <input type="checkbox" name="checkbox" class="filled-in" id="hw4"> <label for="hw4"></label> </p> </form> </div> <i class="material-icons">filter_drama</i>';
             var middlehtml = '<i class="material-icons text-black right">play_for_work</i> </div> <div class="collapsible-body"> <span>';
             var footerhtml = '</span> </div> </li>';
 
