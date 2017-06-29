@@ -165,7 +165,7 @@ $(function () {
         $(div).append(newbutton);
 
         var divbro = $(div).prev();
-        var divspan = $(divbro).children('.badge');
+        var divspan = $(divbro).children('.badge')
 
         $(divspan).remove();
         $(divbro).append('<span class="badge cyan new" data-badge-caption="已审核"></span>');
@@ -267,7 +267,7 @@ $(function () {
             }
 
             $('.model-app').remove();
-        })
+        });
         $.get(url.tminfo, function (json) {
             // tmapp = eval('(' + json + ')');
             tminfo = json;
@@ -285,10 +285,7 @@ $(function () {
 
             }
             $('.model-info').remove();
-        })
-
-
-
+        });
 
     }
 
