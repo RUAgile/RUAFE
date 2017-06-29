@@ -2,6 +2,47 @@
  * Created by lynn on 2017/6/26.
  */
 $(function () {
+
+    var url = {
+        tmapp: "/RUA/tc-getG",
+        tminfo: "/RUA/tc-getAcc",
+        tmdel:"/RUA/tc-delG"
+    };
+    var tmapp = {
+        count: 3,
+        team: [{
+            name: "团队1",
+            leader: "刘春晓",
+            member: "于济凡 朱耀华 吴举豪"
+        }, {
+            name: "团队2",
+            leader: "冯凯文",
+            member: "宋晏祯 王博"
+        }, {
+            name: "团队3",
+            leader: "刘春晓",
+            member: "于济凡 朱耀华 吴举豪"
+        }]
+    };
+
+
+    var tminfo = {
+        count: 3,
+        team: [{
+            name: "团队1",
+            leader: "刘春晓",
+            member: "于济凡 朱耀华 吴举豪"
+        }, {
+            name: "团队2",
+            leader: "冯凯文",
+            member: "宋晏祯 王博"
+        }, {
+            name: "团队3",
+            leader: "刘春晓",
+            member: "于济凡 朱耀华 吴举豪"
+        }]
+    };
+
     $('.side-bar').click(function () {
         var _this = this;
         $('.side-bar').removeClass('baractive');
@@ -28,22 +69,22 @@ $(function () {
         $('#dagang-btn').css('display', 'inline-block');
 
     });
-    // $('.side-bar ').click(function () {
-    //     var _this=this;
-    //     var id=_this.id;
-    //
-    //     switch (id){
-    //         case 'courses':
-    //             var content=$.get('tc-cs.html');
-    //             $('.right-content').html(content);
-    //     }
-    // });
+// $('.side-bar ').click(function () {
+//     var _this=this;
+//     var id=_this.id;
+//
+//     switch (id){
+//         case 'courses':
+//             var content=$.get('tc-cs.html');
+//             $('.right-content').html(content);
+//     }
+// });
 
-    //course-teacher
+//course-teacher
     $('.collapsible').collapsible();
 
 
-    //src-tc
+//src-tc
     $('.choosesrc').click(function () {
         $("[name='checkbox']").each(function () {
             if (!$(this).attr("checked")) {
@@ -63,13 +104,13 @@ $(function () {
     });
     $('.src-del').click(function () {
         $("[name='checkbox']").each(function () {
-            if($(this).prop('checked')){
-                $(this).parents('li').css('display','none');
+            if ($(this).prop('checked')) {
+                $(this).parents('li').css('display', 'none');
             }
         });
     });
 
-    $('.downloasrc').on('click',function () {
+    $('.downloasrc').on('click', function () {
         Materialize.toast('服务器没有相关资源', 4000);
     })
 
@@ -87,11 +128,11 @@ $(function () {
             Materialize.toast('请输入完整的标题和说明文字', 4000);
         }
     });
-    // tc-hw
+// tc-hw
     $('.hw-del').click(function () {
         $("[name='checkbox']").each(function () {
-            if($(this).prop('checked')){
-                $(this).parents('li').css('display','none');
+            if ($(this).prop('checked')) {
+                $(this).parents('li').css('display', 'none');
             }
         });
     });
@@ -113,9 +154,9 @@ $(function () {
     $('.modal').modal();
 
 
-    //tc-tm.html
+//tc-tm.html
 
-    $('.app-pass').click(function () {
+    $('.tm-app').on('click','.app-pass',function () {
         var _this = this;
         var newbutton = '<a class="waves-effect waves-light btn tm-edit">调整团队</a> <a class="waves-effect waves-light btn red tm-del">解散团队</a>';
 
@@ -123,29 +164,70 @@ $(function () {
         var div = $(_this).parent();
         $(div).append(newbutton);
 
-        var divbro=$(div).prev();
-        var divspan=$(divbro).children('span');
+        var divbro = $(div).prev();
+        var divspan = $(divbro).children('span');
 
-        $(divspan).remove();
+        // $(divspan).remove();
         $(divbro).append('<span class="badge cyan new" data-badge-caption="已审核"></span>');
 
         $('.show-tm').append(li);
         $(_this).next().remove();
         $(_this).remove();
 
+        var params={
+            name:teamname,
+            status:1
+        };
 
+        $.post(url.tmapp,params,function () {
+            console.log('accepted');
+        });
     });
 
-    $('.app-reject').click(function () {
+    $('.tm-app').on('click','.app-reject',function () {
         var _this = this;
         var li = $(_this).parent().parent();
         $(li).css('display', 'none');
+
+        var teamname=$(li).find('tm-name').text();
+        var params={
+            name:teamname,
+            status:0
+        };
+
+        $.post(url.tmapp,params,function () {
+            console.log('rejected');
+        });
     });
 
     $('.tm-del').on('click', function () {
         var _this = this;
         var li = $(_this).parent().parent();
         $(li).css('display', 'none');
+
+        var teamname=$(li).find('tm-name').text();
+
+        var params={
+            name:teamname
+        };
+
+        $.post(url.tmdel,params,function () {
+            console.log('deleted');
+        });
+    });
+
+    $('.show-tm').on('click', '.tm-del', function () {
+        var _this = this;
+        var li = $(_this).parent().parent();
+        $(li).css('display', 'none');
+        var teamname=$(li).find('tm-name').text();
+
+        var params={
+            name:teamname
+        };
+        $.post(url.tmdel,params,function () {
+            console.log('deleted');
+        });
     });
     $('.collapsible-body').on('click', '.tm-del', function () {
         var _this = this;
@@ -157,7 +239,62 @@ $(function () {
         //TODO
     });
 
+    function gettmapp() {
+        $.get(url.tmapp, function (json) {
+            tmapp = eval('(' + json + ')');
+        })
+    }
 
+    function gettminfo() {
+        $.get(url.tminfo, function (json) {
+            tminfo = eval('(' + json + ')');
+        })
+    }
+
+    function loadtm() {
+
+        //ajax here
+
+        // gettminfo();
+        // gettmapp();
+
+
+        var appcount = tmapp.count;
+        var infocount = tminfo.count;
+
+        for (var i = 0; i < appcount; i++) {
+            var model1 = $('.model-app').clone();
+
+            model1.find('.tm-name').html(tmapp.team[i].name);
+            model1.find('.tm-leader').html(tmapp.team[i].leader);
+            model1.find('.tm-member').html(tmapp.team[i].member);
+
+            $('.tm-app').append(model1);
+
+            model1.removeClass('model-app');
+
+        }
+
+
+        for (var j = 0; j < infocount; j++) {
+            var model2 = $('.model-info').clone();
+
+            model2.find('.tm-name').html(tminfo.team[j].name);
+            model2.find('.tm-leader').html(tminfo.team[j].leader);
+            model2.find('.tm-member').html(tminfo.team[j].member);
+
+            $('.show-tm').append(model2);
+            model2.removeClass('model-info');
+
+        }
+
+        $('.model-info').remove();
+        $('.model-app').remove();
+
+
+    }
+
+    loadtm();
 
 
 })
