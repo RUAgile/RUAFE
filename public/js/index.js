@@ -4,9 +4,10 @@
 $(function () {
 
     var url = {
-        tmapp: "/RUA/tc-getG",
+        tmapp: "/api/tc-getG",
         tminfo: "/api/tc-getAcc",
-        tmdel: "/RUA/tc-delG"
+        tmdel: "/api/tc-delG",
+        uploadsrc: "/api/tc-up-src"
     };
     var tmapp = {
         count: 3,
@@ -94,6 +95,7 @@ $(function () {
         // alert($('#src1').is(':checked'));
 
     });
+
     $('.choosenot').click(function () {
 
         $("[name='checkbox']").each(function () {//反选
@@ -102,54 +104,10 @@ $(function () {
             })
         })
     });
-    $('.src-del').click(function () {
-        $("[name='checkbox']").each(function () {
-            if ($(this).prop('checked')) {
-                $(this).parents('li').css('display', 'none');
-            }
-        });
-    });
 
-    $('.downloasrc').on('click', function () {
-        Materialize.toast('服务器没有相关资源', 4000);
-    })
 
-    $('.src-public').click(function () {
-        var header = $('#srcheadline').val();
-        var content = $('#srccontent').val();
-        if (header && content) {
-            var headerhtml = '<li> <div class="collapsible-header"> <div class="col s1 m1 selectDown"> <form> <p> <input type="checkbox" name="checkbox" class="filled-in" id="src4"> <label for="src4"></label> </p> </form> </div> <i class="material-icons">filter_drama</i>';
-            var middlehtml = '<i class="material-icons text-black right">play_for_work</i> </div> <div class="collapsible-body"> <span>';
-            var footerhtml = '</span> </div> </li>';
-
-            $('.show-src').append(headerhtml + header + middlehtml + content + footerhtml);
-
-        } else {
-            Materialize.toast('请输入完整的标题和说明文字', 4000);
-        }
-    });
 // tc-hw
-    $('.hw-del').click(function () {
-        $("[name='checkbox']").each(function () {
-            if ($(this).prop('checked')) {
-                $(this).parents('li').css('display', 'none');
-            }
-        });
-    });
-    $('.hw-public').on('click', function () {
-        var header = $('#hwheadline').val();
-        var content = $('#hwcontent').val();
-        if (header && content) {
-            var headerhtml = '<li> <div class="collapsible-header"> <div class="col s1 m1 selectDown"> <form> <p> <input type="checkbox" name="checkbox" class="filled-in" id="hw4"> <label for="hw4"></label> </p> </form> </div> <i class="material-icons">filter_drama</i>';
-            var middlehtml = '<i class="material-icons text-black right">play_for_work</i> </div> <div class="collapsible-body"> <span>';
-            var footerhtml = '</span> </div> </li>';
 
-            $('.show-tw').append(headerhtml + header + middlehtml + content + footerhtml);
-
-        } else {
-            Materialize.toast('请输入完整的标题和说明文字', 4000);
-        }
-    });
 
     $('.modal').modal();
 
@@ -174,6 +132,7 @@ $(function () {
         $(_this).next().remove();
         $(_this).remove();
 
+        var teamname = $(li).find('tm-name').text();
         var params = {
             name: teamname,
             status: 1
@@ -200,21 +159,6 @@ $(function () {
         });
     });
 
-    $('.tm-del').on('click', function () {
-        var _this = this;
-        var li = $(_this).parent().parent();
-        $(li).css('display', 'none');
-
-        var teamname = $(li).find('tm-name').text();
-
-        var params = {
-            name: teamname
-        };
-
-        $.post(url.tmdel, params, function () {
-            console.log('deleted');
-        });
-    });
 
     $('.show-tm').on('click', '.tm-del', function () {
         var _this = this;
@@ -228,11 +172,6 @@ $(function () {
         $.post(url.tmdel, params, function () {
             console.log('deleted');
         });
-    });
-    $('.collapsible-body').on('click', '.tm-del', function () {
-        var _this = this;
-        var li = $(_this).parent().parent();
-        $(li).css('display', 'none');
     });
 
     $('.tm-edit').click(function () {

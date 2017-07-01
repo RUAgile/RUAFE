@@ -26,4 +26,7 @@ router.get('/tc-mk.html',function (req,res,next) {
 router.get('/tc-ci.html',function (req,res,next) {
     res.render('tc-ci',{title:'SEPS'});
 });
+router.get('/tc-od.html',function (req,res,next) {
+    res.render('tc-od',{title:'SEPS'});
+});
 module.exports = router;

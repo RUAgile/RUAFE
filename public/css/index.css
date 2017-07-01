@@ -68,3 +68,6 @@ main {
     margin-top: 12px;
 }
 
+.publishGrade{
+    cursor: pointer;
+}

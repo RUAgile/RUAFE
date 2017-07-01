@@ -32,7 +32,7 @@
         <li id="teamwork " class="side-bar"><a class="waves-effect waves-teal" href="/tc-tm.html">团队管理</a></li>
         <li id="grade" class="side-bar"><a class="waves-effect waves-teal" href="/tc-mk.html">成绩登记</a></li>
         <li id="signin" class="side-bar"><a class="waves-effect waves-teal" href="/tc-ci.html">签到统计</a></li>
-        <li id="olddata" class="side-bar"><a class="waves-effect waves-teal" href="#">以往数据</a></li>
+        <li id="olddata" class="side-bar"><a class="waves-effect waves-teal" href="/tc-od.html">以往数据</a></li>
         <li id="communication" class="side-bar"><a class="waves-effect waves-teal" href="#">师生交流</a></li>
     </ul>
 </div>
@@ -49,9 +49,9 @@
 
             </div>
             <div id="modal1" class="modal">
-                <div class="modal-content">
-                    <div class="row">
-                        <form class="col s12">
+                <div class="modal-content drag-box"  id="drag-box">
+                    <div class="row " >
+                        <form class="col s12 ">
                             <div class="row">
                                 <div class="input-field col s6">
                                     <input  id="srcheadline" type="text" class="validate">
@@ -68,7 +68,7 @@
                                     <input type="file" multiple>
                                 </div>
                                 <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                                    <input class="file-path validate" type="text" placeholder="点击或拖拽上传文件">
                                 </div>
                             </div>
 
@@ -160,5 +160,6 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/tc-src.js"></script>
 
 </html>
