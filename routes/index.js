@@ -19,4 +19,11 @@ router.get('/tc-hw.html',function (req,res,next) {
 router.get('/tc-tm.html',function (req,res,next) {
     res.render('tc-tm',{title:'SEPS'});
 });
+
+router.get('/tc-mk.html',function (req,res,next) {
+    res.render('tc-mk',{title:'SEPS'});
+});
+router.get('/tc-ci.html',function (req,res,next) {
+    res.render('tc-ci',{title:'SEPS'});
+});
 module.exports = router;

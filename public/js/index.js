@@ -291,5 +291,7 @@ $(function () {
 
     loadtm();
 
+//tc-ci.html
 
+    $('ul.tabs').tabs();
 })
