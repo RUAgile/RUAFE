@@ -24,6 +24,8 @@
         <div class="nav-wrapper cyan fixed">
             <a href="#!" class="brand-logo">SEPS</a>
             <ul class="right hide-on-med-and-down">
+                <li id="name">wjh</li>
+                <div id="stuID">123</div>
                 <li><a href="#id1">Sass</a></li>
                 <li><a href="#id2">Components</a></li>
                 <!-- Dropdown Trigger -->
@@ -79,39 +81,37 @@
                     <span class="card-title grey-text text-darken-4">我要当组员<i
                             class="material-icons right">close</i></span>
                     <p>请确认是否要成为<strong class="color-red">团队组员</strong>,本次选择之后将不可更改,如果选择错误请联系老师进行更改</p>
-                    <a class="waves-effect waves-light cyan btn" href="#find-team">确认</a>
+                    <a id="find-team-confirm" class="waves-effect waves-light cyan btn" href="#find-team">确认</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="container" id="team-manage">
         <div class="row">
-            <h1 class="col m12 s12">RUA</h1><!--队名-->
+            <h1 id="team-manage-name" class="col m12 s12">RUA</h1><!--队名-->
             <div class="col m12 opacity team-info-mng z-depth-1">
                 <h4>团队信息</h4>
-                <p>blahblah</p>
+                <p id="team-manage-info">blahblah</p>
                 <h4>待审批</h4>
-                <ul class="collection" id="unchecked">
-                    <li class="collection-item"><div>吴举豪<a class="secondary-content waves-effect waves-light red z-depth-1 disagree">不同意</a><a class="secondary-content waves-effect waves-light cyan z-depth-1 agree">同意</a></div></li>
-                    <li class="collection-item"><div>冯凯文<a class="secondary-content waves-effect waves-light red z-depth-1 disagree">不同意</a><a class="secondary-content waves-effect waves-light cyan z-depth-1 agree">同意</a></div></li>
+                <ul id="team-manage-app" class="collection">
+                    <li class="collection-item"><div><span class="appStuName">吴举豪</span><span class="appStuID">123</span> <a class="secondary-content waves-effect waves-light red z-depth-1 disagree">不同意</a><a class="secondary-content waves-effect waves-light cyan z-depth-1 agree">同意</a></div></li>
                 </ul>
                 <h4>队员信息</h4>
-                <ul class="collection" id="teamMem">
-                    <li class="collection-item">刘春晓</li>
-                    <li class="collection-item">朱耀华</li>
+                <ul id="team-manage-mem" class="collection" id="teamMem">
+                    <li class="collection-item"><span class="memName">刘春晓</span><span class="memStuID">456</span></li>
                 </ul>
-                <button type="submit" id="submit-team-apply" class="cyan waves-effect waves-light btn" onclick="disableTeamApply()">提交团队申请</button>
+                <button type="submit" id="submit-team-apply" class="cyan waves-effect waves-light btn" onclick="teamManageSubmit()">提交团队申请</button>
             </div>
         </div>
     </div>
     <div class="container" id="team-check">
         <div class="row">
-            <h1 class="col m12 s12">RUA</h1><!--队名-->
+            <h1 id="team-check-name" class="col m12 s12">RUA</h1><!--队名-->
             <div class="col m12 opacity team-info-mng z-depth-1">
                 <h4>团队信息</h4>
-                <p>blahblah</p>
+                <p id="team-check-info">blahblah</p>
                 <h4>队员信息</h4>
-                <ul class="collection">
+                <ul id="team-check-mem" class="collection">
                     <li class="collection-item">刘春晓</li>
                     <li class="collection-item">朱耀华</li>
                 </ul>
@@ -131,18 +131,18 @@
             <textarea placeholder="请输入团队信息" type="text" class="materialize-textarea" id="teaminfo"></textarea>
             <label for="teaminfo">团队信息</label>
         </div>
-        <button type="submit" class="cyan waves-effect waves-light btn" onclick="revealTeamMng()">确认</button>
+        <a href="#" type="submit" class="cyan waves-effect waves-light btn" onclick="teamCreate()">确认</a>
     </form>
 </div>
 <div id="find-team" class="modal">
     <div class="modal-content">
-        <div class="row">
+        <div class="row find-team-list-div">
             <div class="col m12 valign-wrapper teamlist opacity z-depth-2">
-                <span>RUA-于济凡的团队</span><!--队名-组长姓名-->
+                <span class="find-team-name">RUA</span><span>-于济凡的团队</span><!--队名-组长姓名-->
             </div>
         </div>
         <div class="row">
-            <div class="col m12 opacity teamContent z-depth-1">
+            <div class="col m12 opacity teamContent z-depth-1 find-team-div">
                 <h4>团队信息</h4>
                 <p>blahblah</p>
                 <h4>队员信息</h4>
@@ -150,7 +150,7 @@
                     <li class="collection-item">吴举豪</li>
                     <li class="collection-item">冯凯文</li>
                 </ul>
-                <button type="submit" class="cyan waves-effect waves-light btn" onclick="revealTeamCheck()">申请加入</button>
+                <a href="#" type="submit" class="find-team-apply cyan waves-effect waves-light btn">申请加入</a>
             </div>
         </div>
     </div>
