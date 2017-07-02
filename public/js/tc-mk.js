@@ -77,14 +77,23 @@ $(function () {
 
         var name = $($(grade).prev()).html();
 
-        var params = {
+        var params = [{
             name: name,
             grade: gradeNum
-        };
+        }];
         if (gradeNum >= 0 && gradeNum <= 100) {
-            $.post(url.postGrade, params, function () {
-                Materialize.toast('打分成功', 4000);
-                $(grade).html(gradeNum);
+            // $.post(url.postGrade, params, function () {
+            //     Materialize.toast('打分成功', 4000);
+            //     $(grade).html(gradeNum);
+            // })
+            $.ajax({
+                type:"get",
+                data:JSON.stringify(params),
+                trditional:true,
+                success:function () {
+                    Materialize.toast('打分成功', 4000);
+                    $(grade).html(gradeNum);
+                }
             })
         }else{
             Materialize.toast('请输入0~100之间的数字', 4000);
