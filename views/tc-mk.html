@@ -26,27 +26,51 @@
     </nav>
 </div>
 <div class="content">
-    <ul id="nav-mobile" class="side-nav fixed" style="width: 250px;transform: translateX(0%);">
-        <li id="courses" class="side-bar"><a class="waves-effect waves-teal" href="/index.html">课程管理</a></li>
-        <li id="sources" class="side-bar"><a class="waves-effect waves-teal" href="/tc-src.html">资源管理</a></li>
-        <li id="homework" class="side-bar"><a class="waves-effect waves-teal" href="/tc-hw.html">作业管理</a></li>
-        <li id="teamwork " class="side-bar"><a class="waves-effect waves-teal" href="/tc-tm.html">团队管理</a>
+    <ul id="nav-mobile" class="side-nav fixed z-depth-3" style="width: 250px;transform: translateX(0%);">
+        <li id="courses" class="side-bar"><a class="waves-effect waves-teal" href="/index.html"><i class="material-icons">date_range</i>课程管理</a></li>
+        <li id="sources" class="side-bar"><a class="waves-effect waves-teal" href="/tc-src.html"><i class="material-icons">theaters</i>资源管理</a></li>
+        <li id="homework" class="side-bar"><a class="waves-effect waves-teal" href="/tc-hw.html"><i class="material-icons">description</i>作业管理</a></li>
+        <li id="teamwork " class="side-bar"><a class="waves-effect waves-teal" href="/tc-tm.html"><i class="material-icons">group</i>团队管理</a>
         </li>
-        <li id="grade" class="side-bar baractive"><a class="waves-effect waves-teal" href="/tc-mk.html">成绩登记</a></li>
-        <li id="signin" class="side-bar"><a class="waves-effect waves-teal" href="/tc-ci.html">签到统计</a></li>
-        <li id="olddata" class="side-bar"><a class="waves-effect waves-teal" href="#">以往数据</a></li>
-        <li id="communication" class="side-bar"><a class="waves-effect waves-teal" href="#">师生交流</a></li>
+        <li id="grade" class="side-bar baractive z-depth-3"><a class="waves-effect waves-teal" href="/tc-mk.html"><i class="material-icons">spellcheck</i>成绩登记</a></li>
+        <li id="signin" class="side-bar"><a class="waves-effect waves-teal" href="/tc-ci.html"><i class="material-icons">assessment</i>签到统计</a></li>
+        <li id="olddata" class="side-bar"><a class="waves-effect waves-teal" href="/tc-od.html"><i class="material-icons">find_replace</i>以往数据</a></li>
+        <li id="communication" class="side-bar"><a class="waves-effect waves-teal" href="#"><i class="material-icons">chat</i>师生交流</a></li>
     </ul>
 </div>
 <main>
     <div class=" row right-content">
         <div class="toolbox">
-            <a class="waves-effect waves-light btn">下载打分模板</a>
-            <a class="waves-effect waves-light btn">上传批量打分</a>
+            <a class="waves-effect waves-light btn down-temp">下载打分模板</a>
+            <a class="waves-effect waves-light btn " href="#modal1">上传批量打分</a>
             <!--<a class="waves-effect waves-light btn right red grade-edit">提交修改</a>-->
-            <a class="waves-effect waves-light btn right">下载成绩单</a>
+            <a class="waves-effect waves-light btn right down-grade">下载成绩单</a>
 
         </div>
+
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <form action="/mooc/uploadGradeXls" method="post" enctype="multipart/form-data">
+                    <div class="file-field input-field">
+                        <h5>上传填写好的模板</h5>
+                        <br>
+                        <div class="btn">
+                            <span>文件</span>
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat up-temp" onclick="document.forms[0].submit()">上传</a>
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">取消</a>
+
+            </div>
+        </div>
+
         <div class="stu-tbl">
             <table class="striped">
                 <thead>

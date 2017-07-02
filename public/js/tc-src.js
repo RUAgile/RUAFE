@@ -19,7 +19,7 @@ $(function () {
     });
 
     $('.downloasrc').on('click', function () {
-        Materialize.toast('服务器没有相关资源', 4000);
+        //Materialize.toast('服务器没有相关资源', 4000);
     })
     $('.src-public').click(function () {
         var header = $('#srcheadline').val();

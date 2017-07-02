@@ -5,7 +5,10 @@
 $(function () {
     var url = {
         getGrade: "api/getGradeG",
-        postGrade: "api/postGradeG"
+        postGrade: "api/postGradeG",
+        getTemp:"/mooc/exportGradeTemplate",
+        getGradexls:"/mooc/exportGrade",
+        postGrade:"/mooc/importGrade"
     };
     var grade = [{
         ID: "2",
@@ -99,6 +102,17 @@ $(function () {
             Materialize.toast('请输入0~100之间的数字', 4000);
 
         }
-    })
+    });
+    $('.down-temp').click(function () {
+        $.get(url.getTemp,function () {
+            Materialize.toast('模板下载成功', 4000);
+        })
+    });
+    $('.down-grade').click(function () {
+        $.get(url.getGradexls,function () {
+            Materialize.toast('成绩单下载成功', 4000);
+        })
+    });
+
 
 })

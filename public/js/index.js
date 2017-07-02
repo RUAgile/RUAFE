@@ -50,6 +50,8 @@ $(function () {
         $(_this).addClass('baractive');
     });
 
+    $('.side-bar').addClass('hoverable');
+
     $('#dagang-btn').click(function () {
         var _this = this;
         $('.edit-dagang').css('display', 'block');
