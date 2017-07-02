@@ -32,4 +32,10 @@ router.get('/tc-hw.html',function (req,res,next) {
 router.get('/tc-tm.html',function (req,res,next) {
     res.render('tc-tm',{title:'SEPS'});
 });
+router.get('/dn-course.html',function (req,res,next) {
+    res.render('dn-course',{title:'SEPS'});
+});
+router.get('/dn-account.html',function (req,res,next) {
+    res.render('dn-account',{title:'SEPS'});
+});
 module.exports = router;
