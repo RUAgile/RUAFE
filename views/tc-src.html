@@ -43,22 +43,56 @@
                 <a class="waves-effect waves-light btn choosesrc">全选</a>
                 <a class="waves-effect waves-light btn choosenot">反选</a>
                 <a class="waves-effect waves-light btn publishsrc" href="#modal1">发布新资源</a>
+                <a class="waves-effect waves-light btn publishsrc" href="#modal2">拖拽上传</a>
                 <a class="waves-effect waves-light btn downloasrc">批量下载</a>
                 <a class="waves-effect waves-light btn deletesrc red src-del">删除</a>
 
 
             </div>
             <div id="modal1" class="modal">
+            <div class="modal-content" >
+                <div class="row " >
+                    <form class="col s12 ">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input  id="srcheadline" type="text" class="validate">
+                                <label for="srcheadline">标题</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input  type="text" id="srccontent" class="validate">
+                                <label for="srccontent">文字说明</label>
+                            </div>
+                        </div>
+                        <div class="file-field input-field">
+                            <div class="btn">
+                                <span>文件</span>
+                                <input type="file" multiple>
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="点击上传文件">
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat src-public">发布</a>
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">取消</a>
+            </div>
+        </div>
+            <div id="modal2" class="modal">
                 <div class="modal-content drag-box"  id="drag-box">
                     <div class="row " >
                         <form class="col s12 ">
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input  id="srcheadline" type="text" class="validate">
+                                    <input  id="srcheadlinedg" type="text" class="validate">
                                     <label for="srcheadline">标题</label>
                                 </div>
                                 <div class="input-field col s12">
-                                    <input  type="text" id="srccontent" class="validate">
+                                    <input  type="text" id="srccontentdg" class="validate">
                                     <label for="srccontent">文字说明</label>
                                 </div>
                             </div>
@@ -77,13 +111,12 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat src-public">发布</a>
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat src-publicdg">发布</a>
                     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">取消</a>
                 </div>
             </div>
             <br>
             <div class="row">
-
                 <div class="col s12 m12">
                     <ul class="collapsible popout show-src" data-collapsible="accordion">
                         <li>

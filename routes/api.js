@@ -11,11 +11,13 @@ var json1= {
     team: [{
         name: "团队1",
         leader: "刘春晓",
-        member: "于济凡 朱耀华 吴举豪"
+        member: "于济凡 朱耀华 吴举豪",
+        gmember:"刘春晓"
     }, {
         name: "团队2",
         leader: "冯凯文",
-        member: "宋晏祯 王博"
+        member: "宋晏祯 王博",
+        gmember:"刘春晓"
     }]
 };
 var json2= {
@@ -23,11 +25,13 @@ var json2= {
     team: [{
         name: "团队7",
         leader: "刘春晓",
-        member: "于济凡 朱耀华 吴举豪"
+        member: "于济凡 朱耀华 吴举豪",
+        gmember:"刘春晓"
     }, {
         name: "团队8",
         leader: "冯凯文",
-        member: "宋晏祯 王博"
+        member: "宋晏祯 王博",
+        gmember:"刘春晓"
     }]
 };
 var grade=[{

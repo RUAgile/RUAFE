@@ -21,16 +21,24 @@ $(function () {
     $('.downloasrc').on('click', function () {
         //Materialize.toast('服务器没有相关资源', 4000);
     })
-    $('.src-public').click(function () {
-        var header = $('#srcheadline').val();
-        var content = $('#srccontent').val();
+    $('.src-publicdg').click(function () {
+        var header = $('#srcheadlinedg').val();
+        var content = $('#srccontentdg').val();
+        var params={
+            name:header,
+            content:content,
+            files:fd
+        };
+
+
         if (header && content) {
 
             // xhr = new XMLHttpRequest();
             // xhr.open("post", url.uploadsrc, true);
             // xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
             // xhr.send(fd);
-
+            fd.append('header',header);
+            fd.append('content',content);
             $.ajax({
                 url: url.uploadsrc,
                 type: "POST",
@@ -69,6 +77,7 @@ $(function () {
         else {
             Materialize.toast('请输入完整的标题和说明文字', 4000);
         }
+        fd=new FormData();
     })
 
 
@@ -110,7 +119,6 @@ $(function () {
         for (var i = 0; i < fileList.length; i++) {
             fd.append('files', fileList[i]);
         }
-
 
     }, false);
 

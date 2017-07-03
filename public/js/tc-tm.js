@@ -91,8 +91,9 @@ $(function () {
                 var model1 = $('.model-app').clone();
 
                 model1.find('.tm-name').html(tmapp.team[i].name);
-                model1.find('.tm-leader').html(tmapp.team[i].leader);
-                model1.find('.tm-member').html(tmapp.team[i].member);
+                model1.find('.tm-leader').html("组长："+tmapp.team[i].leader);
+                model1.find('.tm-member').html("男生："+tmapp.team[i].member);
+                model1.find('.tm-gmember').html("女生："+tmapp.team[i].gmember);
 
                 $('.tm-app').append(model1);
 
@@ -111,8 +112,9 @@ $(function () {
                 var model2 = $('.model-info').clone();
 
                 model2.find('.tm-name').html(tminfo.team[j].name);
-                model2.find('.tm-leader').html(tminfo.team[j].leader);
-                model2.find('.tm-member').html(tminfo.team[j].member);
+                model2.find('.tm-leader').html("组长："+tminfo.team[j].leader);
+                model2.find('.tm-member').html("男生："+tminfo.team[j].member);
+                model2.find('.tm-gmember').html("女生："+tminfo.team[j].gmember);
 
                 $('.show-tm').append(model2);
                 model2.removeClass('model-info');
