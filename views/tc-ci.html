@@ -27,43 +27,53 @@
 </div>
 <div class="content">
     <ul id="nav-mobile" class="side-nav fixed z-depth-3" style="width: 250px;transform: translateX(0%);">
-        <li id="courses" class="side-bar"><a class="waves-effect waves-teal" href="/index.html"><i class="material-icons">date_range</i>课程管理</a></li>
-        <li id="sources" class="side-bar"><a class="waves-effect waves-teal" href="/tc-src.html"><i class="material-icons">theaters</i>资源管理</a></li>
-        <li id="homework" class="side-bar"><a class="waves-effect waves-teal" href="/tc-hw.html"><i class="material-icons">description</i>作业管理</a></li>
-        <li id="teamwork " class="side-bar"><a class="waves-effect waves-teal" href="/tc-tm.html"><i class="material-icons">group</i>团队管理</a>
+        <li id="courses" class="side-bar"><a class="waves-effect waves-teal" href="/index.html"><i
+                class="material-icons">date_range</i>课程管理</a></li>
+        <li id="sources" class="side-bar"><a class="waves-effect waves-teal" href="/tc-src.html"><i
+                class="material-icons">theaters</i>资源管理</a></li>
+        <li id="homework" class="side-bar"><a class="waves-effect waves-teal" href="/tc-hw.html"><i
+                class="material-icons">description</i>作业管理</a></li>
+        <li id="teamwork " class="side-bar"><a class="waves-effect waves-teal" href="/tc-tm.html"><i
+                class="material-icons">group</i>团队管理</a>
         </li>
-        <li id="grade" class="side-bar"><a class="waves-effect waves-teal" href="/tc-mk.html"><i class="material-icons">spellcheck</i>成绩登记</a></li>
-        <li id="signin" class="side-bar baractive z-depth-3"><a class="waves-effect waves-teal" href="/tc-ci.html"><i class="material-icons">assessment</i>签到统计</a></li>
-        <li id="olddata" class="side-bar"><a class="waves-effect waves-teal" href="/tc-od.html"><i class="material-icons">find_replace</i>以往数据</a></li>
-        <li id="communication" class="side-bar"><a class="waves-effect waves-teal" href="#"><i class="material-icons">chat</i>师生交流</a></li>
+        <li id="grade" class="side-bar"><a class="waves-effect waves-teal" href="/tc-mk.html"><i class="material-icons">spellcheck</i>成绩登记</a>
+        </li>
+        <li id="signin" class="side-bar baractive z-depth-3"><a class="waves-effect waves-teal" href="/tc-ci.html"><i
+                class="material-icons">assessment</i>签到统计</a></li>
+        <li id="olddata" class="side-bar"><a class="waves-effect waves-teal" href="/tc-od.html"><i
+                class="material-icons">find_replace</i>以往数据</a></li>
+        <li id="communication" class="side-bar"><a class="waves-effect waves-teal" href="#"><i class="material-icons">chat</i>师生交流</a>
+        </li>
     </ul>
 </div>
 <main>
     <div class=" row right-content">
         <div class="row">
-        <div class="col s12">
-            <ul class="tabs ">
-                <li class="tab col s3"><a  href="#test1">签到情况概览</a></li>
-                <li class="tab col s3"><a class="active" href="#test2">缺勤记录</a></li>
-            </ul>
-        </div>
-        <div id="test1" class="col s12">Test 1</div>
-        <div id="test2" class="col s12">
-            <table class="striped">
-                <thead>
-                <tr>
-                    <th>学号</th>
-                    <th>姓名</th>
-                    <th>所属团队</th>
-                    <th>缺勤记录</th>
-                </tr>
-                </thead>
+            <a class="waves-effect waves-light btn app-pass right beginci" >开始签到</a>
+            <a class="waves-effect waves-light btn app-pass red right stopci"style="display: none;">结束签到</a>
+            <div class="col s6">
+                <ul class="tabs ">
+                    <li class="tab col s6"><a class="active" href="#test2">缺勤记录</a></li>
 
-                <tbody>
 
-                </tbody>
-            </table>
-        </div>
+                </ul>
+            </div>
+            <div id="test2" class="col s12">
+                <table class="striped">
+                    <thead>
+                    <tr>
+                        <th>学号</th>
+                        <th>姓名</th>
+                        <th>所属团队</th>
+                        <th>缺勤记录</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </main>

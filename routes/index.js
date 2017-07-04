@@ -10,6 +10,9 @@ router.get('/index.html',function (req,res,next) {
     res.render('index',{title:'SEPS'});
 
 });
+router.get('/tc-cs.html',function (req,res,next) {
+    res.render('tc-cs',{title:'SEPS'});
+});
 router.get('/tc-src.html',function (req,res,next) {
     res.render('tc-src',{title:'SEPS'});
 });
